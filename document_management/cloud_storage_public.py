@@ -37,7 +37,7 @@ def chunk_text(source_text, chunk_size=150, overlap_size=25):
     return chunks
 
 # Load CSV file containing URLs and Titles
-df = pd.read_csv("./sources.csv")
+df = pd.read_csv("document_management/sources.csv")
 df['URLs'] = df['URL'].apply(lambda x: re.findall(r'https?://\S+', x))
 df = df.explode('URLs').dropna(subset=['URLs'])
 
