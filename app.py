@@ -6,7 +6,6 @@ from rag_components.generator_setup import setup_prompt, initialize_llms, query_
 from dotenv import load_dotenv
 import csv
 import pandas as pd
-
 # Load environment variables from .env file
 load_dotenv()
     
@@ -17,7 +16,7 @@ def main():
     # Prompt the user for a question
     question = input("Enter your question about skin cancer: ").strip()
     if question:
-        port = os.getenv('WEAVIATE_PORT', '8081')
+        port = os.getenv('WEAVIATE_PORT', '8080')
         retriever = initialize_port_retriever(port)
 
         # Define the prompt template
